@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+
+    <link rel="stylesheet" href="./views/style.team.css" />
+  </head>
+
+  <body>
+    <h1>Registreer team</h1>
+    <hr />
+
+    <label for="team-name"><b>Teamnaam</b></label>
+    <input id="team-input" type="text" name="team-name" required />
+
+    <button onClick="submit()" type="submit" class="registerbtn">
+      Register
+    </button>
+    <p id="teamcode"></p>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1>Registreer speler</h1>
+    <hr />
+    <div class="container">
+      <label for="team-name"><b>Voornaam</b></label>
+      <input
+        id="player-input-firstname"
+        type="text"
+        name="team-name"
+        required
+      />
+      <label for="team-name"><b>Achternaam</b></label>
+      <input id="player-input-lastname" type="text" name="team-name" required />
+      <label for="team-name"><b>Email</b></label>
+      <input id="player-input-email" type="text" name="team-name" required />
+      <label for="team-name"><b>Teamcode</b></label>
+      <input id="player-input-teamcode" type="text" name="team-name" required />
+      <label for="team-name"><b>Afstand</b></label>
+      <input id="player-input-distance" type="text" name="team-name" required />
+      <label for="team-name"><b>Positie</b></label>
+      <input id="player-input-position" type="text" name="team-name" required />
+    </div>
+
+    <button onClick="submitplayer()" type="submit" class="registerbtn">
+      Register
+    </button>
+    <script src="./views/script.team.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"
+      integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\bin\\www",
+      "env": {
+        "DATABASE": "estafettes",
+        "DBPASS": "user@zaterdag29!",
+        "DBPORT": "5432",
+        "DBUSER": "subuser",
+        "DBHOST": "178.62.245.142",
+        "SECRET_KEY": "7a52984050c5e31ac18da619144b7a400b87393212de889f50231e5a883e47ef"
+      }
+    }
+  ]
+}
