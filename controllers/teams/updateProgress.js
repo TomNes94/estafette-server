@@ -15,6 +15,8 @@ function sendPushNotificationRequest(deviceToken) {
     },
     {
       headers: {
+        Authorization:
+          "key=AAAArU3TH7s:APA91bHjjff6AfSZHbyXYkTuVAXMOxZ4vW_Z2x8Qmt_ZBb0kLoMqV6c6hylYoQZezinpRTzEGpzHkX6SZAg0AG8UVHBxXchq6FkYeQ9k1MgKkx2_5_q0RgQKAnRGQJIciulqy4wL-ZgK",
         "Content-Type": "application/json",
       },
     }
