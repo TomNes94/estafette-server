@@ -3,13 +3,9 @@ const Sequelize = require("sequelize");
 const axios = require("axios");
 
 function sendPushNotificationRequest(deviceToken) {
-  axios.post("https://fcm.googleapis.com/fcm/send", {
-    headers: {
-      Authorization:
-        "key=AAAArU3TH7s:APA91bHjjff6AfSZHbyXYkTuVAXMOxZ4vW_Z2x8Qmt_ZBb0kLoMqV6c6hylYoQZezinpRTzEGpzHkX6SZAg0AG8UVHBxXchq6FkYeQ9k1MgKkx2_5_q0RgQKAnRGQJIciulqy4wL-ZgK",
-      "Content-Type": "application/json",
-    },
-    body: {
+  axios.post(
+    "https://fcm.googleapis.com/fcm/send",
+    {
       notification: {
         title: "Acloop",
         text: "It's your turn!",
@@ -17,7 +13,12 @@ function sendPushNotificationRequest(deviceToken) {
       priority: "High",
       to: deviceToken,
     },
-  });
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 }
 
 module.exports = async (req, res) => {
