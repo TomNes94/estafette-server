@@ -16,6 +16,12 @@ module.exports = async (req, res, next) => {
   const isNext = team.currentPosition === participant.position;
 
   res.send(
-    JSON.stringify({ participantInfo: { isNext, ...participant.dataValues } })
+    JSON.stringify({
+      participantInfo: {
+        isNext,
+        teamPosition: team.currentPosition,
+        ...participant.dataValues,
+      },
+    })
   );
 };
