@@ -62,11 +62,11 @@ app.post("/insert_player", function (req, res, next) {
     });
   });
 });
-app.use(function (req, res, next) {
+/* app.use(function (req, res, next) {
   console.log(req.originalUrl);
   console.log(req.body);
   next();
-});
+}); */
 require("./routes/auth.routes")(app);
 require("./routes/teams.routes")(app);
 require("./routes/matches.routes")(app);

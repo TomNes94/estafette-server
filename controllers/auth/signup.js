@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
     const user = await Users.findOne({
       where: { emailAddress: req.body.emailAddress },
     });
-
+    user.deviceToken = req.body.deviceToken;
     user.password = bcrypt.hashSync(req.body.password, 10);
 
     await user.save();
