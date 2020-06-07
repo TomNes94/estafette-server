@@ -1,4 +1,4 @@
-const { Teams, Participants } = require("../../models");
+const { Teams, Participants, Users } = require("../../models");
 const Sequelize = require("sequelize");
 const axios = require("axios");
 
