@@ -67,10 +67,6 @@ module.exports = async (req, res) => {
     },
   });
 
-  if (participant.isFinished) {
-    team.currentPosition += 1;
-  }
-
   if (!team.isStarted) {
     team.isStarted = true;
     team.timeStarted = Date.now();
@@ -82,7 +78,8 @@ module.exports = async (req, res) => {
   if (team.totalDistance <= team.distanceCovered) {
     team.isFinished = true;
     team.timeFinished = Date.now();
-  } else {
+  } else if (participant.isFinished) {
+    team.currentPosition += 1;
     const nextParticipant = await Participants.findOne({
       where: {
         position: participant.position + 1,
@@ -94,10 +91,6 @@ module.exports = async (req, res) => {
         id: nextParticipant.userId,
       },
     });
-
-    console.log(user);
-
-    console.log(nextParticipant);
 
     sendPushNotificationRequest(user.deviceToken);
   }
