@@ -16,7 +16,6 @@ function submitplayer() {
   let email = document.getElementById("player-input-email").value;
   let teamcode = document.getElementById("player-input-teamcode").value;
   let distance = document.getElementById("player-input-distance").value;
-  let position = document.getElementById("player-input-position").value;
 
   axios.post("/insert_player", {
     firstname,
@@ -24,6 +23,5 @@ function submitplayer() {
     email,
     teamcode,
     distance,
-    position,
   });
 }

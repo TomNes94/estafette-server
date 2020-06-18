@@ -37,11 +37,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       field: "updated_at",
     },
-    deviceToken: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      field: "device_token",
-    },
   });
 
   return Users;

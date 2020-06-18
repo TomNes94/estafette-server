@@ -1,7 +1,5 @@
-const { Users, Tokens } = require("../../models");
-const { v4: uuidv4 } = require("uuid");
+const { Users } = require("../../models");
 
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 module.exports = async (req, res) => {
@@ -10,7 +8,6 @@ module.exports = async (req, res) => {
     const user = await Users.findOne({
       where: { emailAddress: req.body.emailAddress },
     });
-    user.deviceToken = req.body.deviceToken;
     user.password = bcrypt.hashSync(req.body.password, 10);
 
     await user.save();

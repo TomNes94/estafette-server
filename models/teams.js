@@ -60,10 +60,10 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
         field: "total_time_taken",
       },
-      currentPosition: {
+      totalParticipantsFinished: {
         type: DataTypes.INTEGER,
         allowNull: true,
-        field: "current_position",
+        field: "total_participants_finished",
       },
     },
     {

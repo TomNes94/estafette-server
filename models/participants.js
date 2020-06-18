@@ -79,11 +79,6 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
         field: "time_taken",
       },
-      position: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        field: "position",
-      },
     },
     {
       tableName: "participants",

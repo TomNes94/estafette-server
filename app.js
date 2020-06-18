@@ -22,11 +22,16 @@ app.get("/form", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/public/views/team.html"));
 });
 
+app.use(function (req, res, next) {
+  console.log(req.body);
+  next();
+});
+
 app.post("/insert_team", function (req, res, next) {
   let code = makeid(12);
   let query = `INSERT INTO teams(
-    team_name, total_distance, match_id, created_at, is_started, is_finished, updated_at, distance_covered, invitation_key, current_position)
-    VALUES ('${req.body.teamName}', 70000, 2, current_timestamp, false, false, current_timestamp, 0, '${code}', 1); `;
+    team_name, total_distance, match_id, created_at, is_started, is_finished, updated_at, distance_covered, invitation_key, total_participants_finished)
+    VALUES ('${req.body.teamName}', 70000, 2, current_timestamp, false, false, current_timestamp, 0, '${code}', 0); `;
 
   pool.query(query, (err, result) => {
     res.send({ teamCode: code });
@@ -55,8 +60,8 @@ app.post("/insert_player", function (req, res, next) {
     let userid = result[1].rows[0].id;
     let teamid = result[2].rows[0].id;
     let newquery = `INSERT INTO participants(
-      user_id, team_id, distance, date_start, date_end, created_at, updated_at, is_started, is_finished, position)
-        VALUES(${userid}, ${teamid}, ${req.body.distance}, NULL, NULL, current_timestamp, current_timestamp, false, false, ${req.body.position});`;
+      user_id, team_id, distance, date_start, date_end, created_at, updated_at, is_started, is_finished)
+        VALUES(${userid}, ${teamid}, ${req.body.distance}, NULL, NULL, current_timestamp, current_timestamp, false, false);`;
     pool.query(newquery, (err, result) => {
       res.send("Klaar");
     });
