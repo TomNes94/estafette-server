@@ -22,6 +22,10 @@ app.get("/form", function (req, res, next) {
   res.sendFile(path.join(__dirname + "/public/views/team.html"));
 });
 
+app.get("/support", function (req, res, next) {
+  res.sendFile(path.join(__dirname + "/public/views/support.html"));
+});
+
 app.use(function (req, res, next) {
   console.log(req.body);
   next();
