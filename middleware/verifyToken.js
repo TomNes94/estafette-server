@@ -8,6 +8,7 @@ verifyToken = (req, res, next) => {
 
     token = token.slice(7, token.length).trimLeft();
   }
+
   if (!token) {
     return res.status(403).send({
       message: "No token provided!",

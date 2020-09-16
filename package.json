@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "mocha './{,!(node_modules)/**}/*.test.js'"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
+    "chai": "^4.2.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -18,11 +20,15 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.1.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.3",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.6",
+    "sinon": "^9.0.3",
+    "sinon-chai": "^3.5.0",
+    "supertest": "^4.0.2",
     "uuid": "^8.1.0",
     "websocket": "^1.0.31",
     "ws": "^7.3.0"
