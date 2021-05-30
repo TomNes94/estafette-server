@@ -31,7 +31,7 @@
     "supertest": "^4.0.2",
     "uuid": "^8.1.0",
     "websocket": "^1.0.31",
-    "ws": "^7.3.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "sequelize-cli": "^5.5.1"
